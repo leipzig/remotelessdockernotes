@@ -2,8 +2,8 @@
 notes on localizing remote dependencies for reproducible docker builds
 
 ## Inspiration
-https://twitter.com/smllmp/status/1542131074339422212 
-https://twitter.com/tallphil/status/1570525478825644038
+- https://twitter.com/smllmp/status/1542131074339422212 
+- https://twitter.com/tallphil/status/1570525478825644038
 
 ## Rationale
 Docker is not a panacea for reproducibility. Docker images are stable binary freezes, but Dockerfiles often fetch remote hyperlinks that can easily disappear. The goal here is to fetch any files the docker build accesses from the internet and save them locally, then fool the build process into using those local versions on subsequent builds. Some processes also fetch dependencies at runtime.
