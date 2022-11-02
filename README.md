@@ -6,7 +6,7 @@ notes on localizing remote dependencies for reproducible docker builds
 - https://twitter.com/tallphil/status/1570525478825644038
 
 ## Rationale
-Docker is not a panacea for reproducibility. Docker images are stable binary freezes, but Dockerfiles often fetch remote hyperlinks that can easily disappear. The goal here is to fetch any files the docker build accesses from the internet and save them locally, then fool the build process into using those local versions on subsequent builds. Some processes also fetch dependencies at runtime.
+Docker is not a panacea for reproducibility. Docker images are stable binary freezes, but Dockerfiles often fetch remote hyperlinks that can easily change or disappear. The goal here is to intercept any files the docker build process accesses from the internet and save them locally, then fool the build process into using those local versions on subsequent builds. Some processes also fetch dependencies at runtime, so a more extended approach may be required there.
 .
 ## logging network access
 ### Unix
